@@ -7,5 +7,6 @@
 }
 .my-card {
   background-color: tomato;
+  border: 1px lightseagreen;
   padding: 20px;
 }
