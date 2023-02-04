@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
 
 :root {
-  --body-bg: #FFF8E1;
-  --title-color: #FF8F00;
+  --body-bg: #fff8e1;
+  --title-color: #ff8f00;
 }
-html, body, h1, h2, h3 {
+html,
+body,
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,8 +29,8 @@ body {
   width: 800px;
   max-width: 100rem;
   padding: 1rem;
-  background-color: white;
-  box-shadow: 0 2px 8px 1px rgba(0,0,0,0.15);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.15);
   margin: 0 auto;
 }
 .card-title {

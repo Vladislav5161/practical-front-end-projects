@@ -1,0 +1,11 @@
+.textik {
+  font-size: 100px;
+  font-family: fantasy;
+  color: darkblue;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.my-card {
+  background-color: tomato;
+  padding: 20px;
+}
