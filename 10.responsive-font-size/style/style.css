@@ -1,33 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
 
 :root {
-  --body-bg: #FFF8E1;
-  --title-color: #FF8F00;
+  --body-bg: #fff8e1;
+  --title-color: #ff8f00;
 }
-html, body, h1, h2, h3 {
+html,
+body,
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-body {
+.cards {
   background-color: var(--body-bg);
-  height: 100vh;
+
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0 2rem;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
 .page-title {
   margin: 2rem 0;
   text-align: center;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 .card {
-  width: 800px;
-  max-width: 100rem;
+  max-width: 20rem;
   padding: 1rem;
-  background-color: white;
-  box-shadow: 0 2px 8px 1px rgba(0,0,0,0.15);
-  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.15);
+  margin: 50px auto;
 }
 .card-title {
   color: var(--title-color);
