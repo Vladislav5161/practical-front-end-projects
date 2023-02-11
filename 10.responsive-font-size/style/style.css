@@ -14,7 +14,7 @@ h3 {
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-body {
+.cards {
   background-color: var(--body-bg);
   height: 100vh;
   display: flex;
