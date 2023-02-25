@@ -46,10 +46,11 @@ h3 {
 .topnav {
   background-color: #333;
   position:absolute;
-  width: 300px;
+  width: 100vw;
   
   top: 50px;
   left:100%;
+  transition: left .3s;
 }
 
 .topnav a {
@@ -135,4 +136,10 @@ header{
 body{
   overflow-x: hidden;
 
+}
+.input-menu-toggle{
+display: none;
+}
+.input-menu-toggle:checked~.topnav{
+  left: 0;
 }
