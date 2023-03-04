@@ -148,6 +148,35 @@ display: none;
 
 }
 
-.card__button {
+.my-button {
+height: 48px;
+border-radius: 6px;
+color: white;
+padding-left: 40px;
+padding-right:40px;
+border-width: 0;
+border-bottom-width:4px;
+border-bottom-color: rgba(85, 79, 79, 0.20);
+cursor: pointer;
+font-size: 16px;
+font-weight: 700;
+transition: all 0.2s;
+
+}
+.my-button--green{
+  background-color: rgba(47, 204, 113, 1);
+}
+.my-button--red{
+  background-color: rgba(231, 75, 60, 1);
+}
+.my-button--purple{
+  background-color: rgba(155, 89, 182, 1);
+}
+.my-button:hover{
+  opacity: 0.8;
   
+}
+.my-button:active{
+  transform: translateY(3px);
+  border-bottom-color: rgba(85, 79, 79, 0);
 }
