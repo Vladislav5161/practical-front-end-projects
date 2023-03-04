@@ -143,3 +143,11 @@ display: none;
 .input-menu-toggle:checked~.topnav{
   left: 0;
 }
+
+.card__buttons {
+
+}
+
+.card__button {
+  
+}
