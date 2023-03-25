@@ -17,3 +17,15 @@ right.addEventListener("mouseenter", () => {
 right.addEventListener("mouseleave", () => {
   container.classList.remove("hover-right");
 });
+const buttons = document.querySelectorAll(".hello");
+/*button.addEventListener("click",()=> {
+  console.log("clicked")
+})*/
+buttons.forEach((button)=>{
+  console.log(button)
+  button.addEventListener("click",()=> {
+    console.log("clicked")
+  })
+})
+
+console.log(buttons)
