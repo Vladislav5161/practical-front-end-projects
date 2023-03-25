@@ -10,7 +10,23 @@
   <body>
     <div class="card">my card</div>
     <div class="my-card">my card</div>
-Nikita Poroshin
+      Nikita Poroshin
 
   </body>
+  <script>
+    window.addEventListener("load", (event) => {
+      console.log("page is fully loaded");
+
+      window.fetch('https://imdb8.p.rapidapi.com/auto-complete?q="game of thr"', {
+        // body: {q: 'game of thr'},
+        headers: {
+          'X-RapidAPI-Key': '11fd48b04dmsh6f8289a439bfd01p1e46ffjsn34c83bfc13b5',
+          'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
+        },
+        method: 'GET'
+      })
+        .then(resp => resp.json())
+        .then(console.log)
+    });
+  </script>
 </html>
