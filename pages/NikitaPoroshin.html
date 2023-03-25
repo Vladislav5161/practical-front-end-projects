@@ -26,7 +26,19 @@
         method: 'GET'
       })
         .then(resp => resp.json())
-        .then(console.log)
+        .then((data) => {
+          const body = document.querySelector('body')
+          data.d.map(film => {
+            const card = document.createElement('div')
+            card.innerHTML = `
+              <div class="card">
+                <div class="card__name">${film.l}</div>
+                <img src="${film.i.imageUrl}" height="${film.i.height}" width="${film.i.width}" >
+              </div>
+            `
+            body.appendChild(card)
+          })
+        })
     });
   </script>
 </html>
