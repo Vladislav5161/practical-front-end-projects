@@ -19,11 +19,24 @@
     />
   </body>
   <script>
-    let inputValue = "game of";
-
     window.addEventListener("load", (event) => {
       console.log("page is fully loaded");
+      fageFilms("game of");
+    });
 
+    const form = document.querySelector(".for-search-films");
+    const input = document.getElementById("input__search");
+
+    form.addEventListener("submit", onFormSubmit);
+
+    function onFormSubmit(ev) {
+      ev.preventDefault();
+      const newInputVal = input.value;
+      fageFilms(newInputVal);
+      console.log("on form submit", newInputVal);
+    }
+
+    function fageFilms(inputValue) {
       window
         .fetch(`https://imdb8.p.rapidapi.com/auto-complete?q="${inputValue}"`, {
           // body: {q: 'game of thr'},
@@ -57,18 +70,6 @@
             console.log(film);
           });
         });
-    });
-
-    const form = document.querySelector(".for-search-films");
-    const input = document.getElementById("input__search");
-
-    form.addEventListener("submit", onFormSubmit);
-
-    function onFormSubmit(ev) {
-      ev.preventDefault();
-      const newInputVal = input.value;
-
-      console.log("on form submit", newInputVal);
     }
   </script>
 </html>
