@@ -1,33 +1,37 @@
-.my-card{
-    background-color: purple;
-    padding: 20px;
+.my-card {
+  background-color: purple;
+  padding: 20px;
 }
-.card_img{
-    width: 100%;
-    height: auto;
+.card_img {
+  width: 100%;
+  height: auto;
 }
-.cards_container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.cards_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.card{
-    min-width: 200px;
+.card {
+  min-width: 200px;
 }
-.card__name{
-    font-size: large;
+.card__name {
+  font-size: large;
 }
 .card__year,
-.card__rank{
-    opacity: 0.5;
+.card__rank {
+  opacity: 0.5;
 }
-.card_loader{
-    display: block;
-    margin: auto;
+.card_loader {
+  display: block;
+  margin: auto;
 }
-body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+  min-height: 100vh;
+  display: block;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
