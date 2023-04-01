@@ -22,7 +22,12 @@
           ["Ukraine", 4500000],
         ]);
 
-        var options = {};
+        var options = {
+          colorAxis: { colors: ["#ff5a47", "yellow", "green"] },
+          backgroundColor: "#00bcf0",
+          datalessRegionColor: "#ede8e8",
+          defaultColor: "#f4e6e6",
+        };
 
         var chart = new google.visualization.GeoChart(
           document.getElementById("regions_div")
