@@ -9,18 +9,23 @@
         packages: ["geochart"],
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
+      
+      async function drawRegionsMap() {
+        const countriesName = ['Germany', 'Brazil', 'Egypt']
+        const chardData = [
+          ["Country", "Popularity"]
 
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ["Country", "Popularity"],
-          ["Germany", 200],
-          ["United States", 300],
-          ["Brazil", 400],
-          ["Canada", 500],
-          ["France", 600],
-          ["RU", 700],
-          ["Ukraine", 4500000],
-        ]);
+        ]
+
+        for (let i = 0; i < countriesName.length; i++) {
+          const response = await fetchCovidData(countriesName[i])
+          console.log(response)
+          chardData.push([response.country, response.count])
+        }
+
+        console.log(chardData)
+
+        var data = google.visualization.arrayToDataTable(chardData);
 
         var options = {};
 
@@ -30,6 +35,23 @@
 
         chart.draw(data, options);
       }
+
+      async function fetchCovidData(country) {
+        const params = new URLSearchParams({ country })
+        const data = await window.fetch(`https://get-population.p.rapidapi.com/population/country?${params}`, {
+            headers: {
+              "X-RapidAPI-Key": "11fd48b04dmsh6f8289a439bfd01p1e46ffjsn34c83bfc13b5",
+              "X-RapidAPI-Host": "get-population.p.rapidapi.com",
+            },
+            method: "GET",
+          })
+          .then((resp) => resp.json())
+
+        return data
+
+        console.log('data::', data)
+      }
+
     </script>
   </head>
   <body>
