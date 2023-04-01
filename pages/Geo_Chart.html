@@ -16,16 +16,35 @@
       google.charts.setOnLoadCallback(drawRegionsMap);
       
       async function drawRegionsMap() {
-        const countriesName = ['Germany', 'Brazil', 'Egypt']
+        const countriesName = [
+          'Bangladesh',
+          'Brazil',
+          'China',
+          'Egypt',
+          'Ethiopia',
+          'Germany',
+          'India',
+          'Indonesia',
+          'Japan',
+          'Mexico',
+          'Nigeria',
+          'Pakistan',
+          'Philippines',
+          'Thailand',
+          'Turkey',
+        ]
+
         const chardData = [
           ["Country", "Popularity"]
-
+          // will add here in for loop
         ]
 
         for (let i = 0; i < countriesName.length; i++) {
           const response = await fetchCovidData(countriesName[i])
           console.log(response)
-          chardData.push([response.country, response.count])
+          if (response) {
+            chardData.push([response.country, response.count])
+          }
         }
 
         console.log(chardData)
