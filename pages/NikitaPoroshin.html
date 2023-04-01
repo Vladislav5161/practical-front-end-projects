@@ -8,9 +8,46 @@
     <link rel="stylesheet" href="../style/Poroshin.css" />
   </head>
   <body>
-    <div class="card">my card</div>
-    <div class="my-card">my card</div>
-Nikita Poroshin
+    
+    <img id="card_loader" class="card_loader" src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=82a1493bhulo4ig2nhhq0ajbgjh1td34wpplfdmr3rxd8xmy&rid=200w.gif&ct=g">
+      
 
   </body>
+  <script>
+    window.addEventListener("load", (event) => {
+      console.log("page is fully loaded");
+
+      window.fetch('https://imdb8.p.rapidapi.com/auto-complete?q="game of thr"', {
+        // body: {q: 'game of thr'},
+        headers: {
+          'X-RapidAPI-Key': '11fd48b04dmsh6f8289a439bfd01p1e46ffjsn34c83bfc13b5',
+          'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
+        },
+        method: 'GET'
+      })
+        .then(resp => resp.json())
+        .then((data) => {
+          const body = document.querySelector('body')
+          const loader = document.getElementById('card_loader')
+          loader.remove()
+          const card_list = document.createElement('div')
+          card_list.classList.add('cards_container')
+          body.appendChild(card_list)
+          data.d.map(film => {
+            const card = document.createElement('div')
+            card.innerHTML = `
+          
+              <div class="card">
+                <div class="card__name">${film.l}</div>
+                <div class="card__year">Year:${film.y}</div>
+                <div class="card__rank">Rank:${film.rank}</div>
+                <img class="card_img" src="${film.i.imageUrl}" height="${film.i.height}" width="${film.i.width}" >
+              </div>
+            `
+            card_list.appendChild(card)
+              console.log(film)
+          })
+        })
+    });
+  </script>
 </html>
