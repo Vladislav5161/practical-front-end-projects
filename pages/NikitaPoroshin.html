@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="../style/Poroshin.css" />
   </head>
   <body>
-    
+    <form  class="for-search-films">
+          <input type="text">
+          <button type="submit">button</button>
+    </form>
     <img id="card_loader" class="card_loader" src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=82a1493bhulo4ig2nhhq0ajbgjh1td34wpplfdmr3rxd8xmy&rid=200w.gif&ct=g">
       
 
   </body>
   <script>
+    let inputValue = 'game of'
+
     window.addEventListener("load", (event) => {
       console.log("page is fully loaded");
 
-      window.fetch('https://imdb8.p.rapidapi.com/auto-complete?q="game of thr"', {
+      window.fetch(`https://imdb8.p.rapidapi.com/auto-complete?q="${inputValue}"`, {
         // body: {q: 'game of thr'},
         headers: {
           'X-RapidAPI-Key': '11fd48b04dmsh6f8289a439bfd01p1e46ffjsn34c83bfc13b5',
@@ -49,5 +54,16 @@
           })
         })
     });
+
+    const form = document.querySelector('.for-search-films')
+
+    form.addEventListener('submit', onFormSubmit)
+
+    function onFormSubmit (ev) {
+      ev.preventDefault()
+      const newInputVal = ev.target
+
+      console.log('on form submit', newInputVal)
+    }
   </script>
 </html>
