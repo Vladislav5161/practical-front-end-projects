@@ -51,7 +51,9 @@
         .then((data) => {
           const body = document.querySelector("body");
           const loader = document.getElementById("card_loader");
-          loader.remove();
+          if (loader) {
+            loader.remove();
+          }
           const card_list = document.createElement("div");
           card_list.classList.add("cards_container");
           body.appendChild(card_list);
