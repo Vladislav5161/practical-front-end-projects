@@ -1,5 +1,10 @@
 <html>
   <head>
+    <style>
+      body {
+        background-color: #00bcf0;
+      }
+    </style>
     <script
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
@@ -27,7 +32,12 @@
 
         var data = google.visualization.arrayToDataTable(chardData);
 
-        var options = {};
+        var options = {
+          colorAxis: { colors: ["#ff5a47", "yellow", "green"] },
+          backgroundColor: "#00bcf0",
+          datalessRegionColor: "#ede8e8",
+          defaultColor: "#f4e6e6",
+        };
 
         var chart = new google.visualization.GeoChart(
           document.getElementById("regions_div")
