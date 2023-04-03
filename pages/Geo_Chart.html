@@ -14,45 +14,45 @@
         packages: ["geochart"],
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
-      
+
       async function drawRegionsMap() {
         const countriesName = [
-          'Bangladesh',
-          'Brazil',
-          'China',
-          'Egypt',
-          'Ethiopia',
-          'Germany',
-          'India',
-          'Indonesia',
-          'Japan',
-          'Mexico',
-          'Nigeria',
-          'Pakistan',
-          'Philippines',
-          'Thailand',
-          'Turkey',
-        ]
+          "Bangladesh",
+          "Brazil",
+          "China",
+          "Egypt",
+          "Ethiopia",
+          "Germany",
+          "India",
+          "Indonesia",
+          "Japan",
+          "Mexico",
+          "Nigeria",
+          "Pakistan",
+          "Philippines",
+          "Thailand",
+          "Turkey",
+        ];
 
         const chardData = [
-          ["Country", "Popularity"]
+          ["Country", "Popularity"],
           // will add here in for loop
-        ]
+        ];
 
         for (let i = 0; i < countriesName.length; i++) {
-          const response = await fetchCovidData(countriesName[i])
-          console.log(response)
+          const response = await fetchCovidData(countriesName[i]);
+          console.log(response);
           if (response) {
-            chardData.push([response.country, response.count])
+            chardData.push([response.country, response.count]);
           }
         }
 
-        console.log(chardData)
+        console.log(chardData);
 
         var data = google.visualization.arrayToDataTable(chardData);
 
         var options = {
-          colorAxis: { colors: ["#ff5a47", "yellow", "green"] },
+          colorAxis: { colors: ["#a3ffb9", "#1aff4f", "#006b19"] },
           backgroundColor: "#00bcf0",
           datalessRegionColor: "#ede8e8",
           defaultColor: "#f4e6e6",
@@ -66,21 +66,25 @@
       }
 
       async function fetchCovidData(country) {
-        const params = new URLSearchParams({ country })
-        const data = await window.fetch(`https://get-population.p.rapidapi.com/population/country?${params}`, {
-            headers: {
-              "X-RapidAPI-Key": "11fd48b04dmsh6f8289a439bfd01p1e46ffjsn34c83bfc13b5",
-              "X-RapidAPI-Host": "get-population.p.rapidapi.com",
-            },
-            method: "GET",
-          })
-          .then((resp) => resp.json())
+        const params = new URLSearchParams({ country });
+        const data = await window
+          .fetch(
+            `https://get-population.p.rapidapi.com/population/country?${params}`,
+            {
+              headers: {
+                "X-RapidAPI-Key":
+                  "11fd48b04dmsh6f8289a439bfd01p1e46ffjsn34c83bfc13b5",
+                "X-RapidAPI-Host": "get-population.p.rapidapi.com",
+              },
+              method: "GET",
+            }
+          )
+          .then((resp) => resp.json());
 
-        return data
+        return data;
 
-        console.log('data::', data)
+        console.log("data::", data);
       }
-
     </script>
   </head>
   <body>
